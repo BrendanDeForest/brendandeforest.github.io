@@ -6,6 +6,7 @@
 let poleAudit = document.getElementById('poleAudit') //Declares ID as var poleAudit
 
 poleAudit.addEventListener("click", evt => {
+
     const poleID = prompt("Enter CEID#");
     const poleSize = prompt("Enter Pole Size");
     const poleClass = prompt("Enter Pole Class");
@@ -28,48 +29,17 @@ poleAudit.addEventListener("click", evt => {
     if (newPole.replace == "Yes") {
         alert("Please replace this pole.");
     }
-})
+});
 
-/* --------------------------------------------------
-//CONVERTS DECIMAL FOOTAGE TO INCHES
-*/
+//Creates functionality for Feet to Inches Calculator
+document.getElementById('feetToInches').onclick = function () {
+    let ans = prompt("Please enter your number");
+    let result = ftToInches(ans);
+    alert(result);
+}
 
-let ftToInches = document.getElementById('feetToInches')
-
-ftToInches.addEventListener("click", evt => {
-    const feet = prompt("Please enter a value in feet");
-    var inches = Math.floor(feet * 12);
-
-    if (inches / 12) {
-        var footage = (inches/12).toFixed(0);
-        var inches = inches%12;
-    }
-    alert(feet + "ft = " + footage + "ft " + inches + "in");
-    }
-)
-
-/* --------------------------------------------------
-//GENERATE:  DOESN'T REALLY DO ANYTHING YET
-*/
-
-document.getElementById('generate').onclick = function() {
- 
-    var values = ["Good","Worn","Damaged"];
-   
-    var select = document.createElement("select");
-    select.name = "pets";
-    select.id = "pets"
-   
-    for (const val of values) {
-      var option = document.createElement("option");
-      option.value = val;
-      option.text = val.charAt(0).toUpperCase() + val.slice(1);
-      select.appendChild(option);
-    }
-   
-    var label = document.createElement("label");
-    label.innerHTML = "What condition is the pole in?: "
-    label.htmlFor = "Choose";
-   
-    document.getElementById("workspace").appendChild(label).appendChild(select);
-  }
+//Function to Convert Feet to Inches
+function ftToInches(ft) {
+    let result = Math.floor(ft * 12);
+    return result;
+}
