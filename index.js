@@ -31,12 +31,28 @@ poleAudit.addEventListener("click", evt => {
     }
 });
 
+let workSpace = document.getElementById('workspace');
+
 //Creates functionality for Feet to Inches Calculator
 document.getElementById('feetToInches').onclick = function () {
-    let ans = prompt("Please enter your number");
-    let result = ftToInches(ans);
-    alert(result);
-}
+    
+    //Generate field for text input
+    workSpace.innerHTML = '<input type="text" id="inputFeet" value="Please enter feet here." />';
+    
+    //Generate Submit Button
+    workSpace.innerHTML += '<input type="submit" value="Submit" id="feetSubmit">';
+
+    //Upon submit, read input
+    let feetSubmit = document.getElementById("feetSubmit");
+    feetSubmit.addEventListener("click", evt => {
+        let feet = document.getElementById("inputFeet").value;
+        console.log(feet);
+        //Run ftToInches
+        let result = ftToInches(feet);
+        //Display results
+        console.log(result);
+    });
+};
 
 //Function to Convert Feet to Inches
 function ftToInches(ft) {
