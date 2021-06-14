@@ -1,4 +1,3 @@
-
 /* --------------------------------------------------
 //POLE AUDIT: CHECK TO SEE IF EXISTING POLE ADEQUATE
 */
@@ -50,6 +49,7 @@ document.getElementById('feetToInches').onclick = function () {
         //Run ftToInches
         let result = ftToInches(feet);
         //Display results
+        workSpace.innerHTML += "<p>"+feet+ " feet is equal to "+result+" inches.<p/>";
         console.log(result);
     });
 };
