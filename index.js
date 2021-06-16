@@ -75,7 +75,7 @@ function attachCalc() {
   let result = (a-b);
   resultFeet = Math.floor(result/12);
   resultInches = result%12;
-  document.getElementById("calcResults").innerHTML = '<strong>Result</strong> ' + resultFeet + " ft " + resultInches + " in";
+  document.getElementById("calcResults").innerHTML = '<strong>Result =</strong> ' + resultFeet + " ft " + resultInches + " in";
 
   console.log("attachCalc() has completed");
 }
