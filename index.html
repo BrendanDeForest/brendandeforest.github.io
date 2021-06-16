@@ -7,22 +7,37 @@
 </head>
 
 <body>
-    <div id="header">
+    <header>
 	    <small>Built by <a href="https://twitter.com/brendandeforest">Brendan DeForest</a></small>
-        <h1>Distribution Designer Tools</h1>
-        <img class="header-image center" src="images/utilityPoles.jpg" alt="utility poles">
-    </div>
+      <h1>Distribution Designer Tools</h1>
+      <img class="header-image center" src="images/utilityPoles.jpg" alt="utility poles">
+    </header>
+
     <div id="container"> 
-        <ul class="buttons">
-            <button id="feetToInches">Feet to Inches Converter</button>
-            <button id="poleAudit">Pole Audit</button>
-            <button id="generate">Generate</button>
-        </ul>
-    </div>
-
     <div id="workspace">
-
-        <!-- Tools get displayed here -->
+        <div id="calcSpace">
+        <h3>Attachment Calculator</h3>
+        <form id="calc">
+          <label>Top Attachment</label>
+          <div>
+            <input type="number" id="a_ft" placeholder="feet">
+            <input type="number" id="a_in" placeholder="inches">
+          </div>
+            <br>
+            <label>Bottom Attachment</label>
+            <br>
+          <div>
+            <input type="number" id="b_ft" placeholder="feet">
+            <input type="number" id="b_in" placeholder="inches">
+          </div>
+          <div>
+            <!-- Drop Down Menu add/subtract -->
+            <Button type="reset">Reset</button>
+            <Button type="submit" onevent="event.preventDefault()" onclick="attachCalc()">Submit</button>
+          </div>
+        </form>
+        <div id="calcResults"></div>
+      </div>
 
     </div>
 
@@ -40,14 +55,8 @@
             </li>
         </ul>
     </div>
+    </div>
 </body>
-
-
-
-<footer id="footer">
-    <small>Built by <a href="http://www.twitter.com/brendandeforest">Brendan DeForest</a>
-</footer>
-
 
 <script src="index.js"></script>
 </html>
