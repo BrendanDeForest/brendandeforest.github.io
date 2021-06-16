@@ -60,22 +60,24 @@ function attachCalc() {
   let a_ft = parseInt(document.getElementById('a_ft').value);
   //read ainches
   let a_in = parseInt(document.getElementById('a_in').value);
-  
-  let a = a_ft + toFeet(a_in);
+ 
+  //Adds up total inches
+  let a = toInches(a_ft) + a_in;
 
   //read bfeet
   let b_ft = parseInt(document.getElementById('b_ft').value);
   //read binches
   let b_in = parseInt(document.getElementById('b_in').value);
 
-  let b = b_ft + toFeet(b_in);
-  //convert ainches, b inches to feet
-  //calculate difference
-  console.log("attachCalc() has completed");
+  //Adds up total inches
+  let b = toInches(b_ft) + b_in;
+
   let result = (a-b);
-  resultFeet = toFeet(result);
-  resultInches = toInches(result);
-  document.getElementById("calcResults").innerHTML = '<strong>Result</strong> ' + resultFeet + "ft " + resultInches + " in";
+  resultFeet = Math.floor(result/12);
+  resultInches = result%12;
+  document.getElementById("calcResults").innerHTML = '<strong>Result</strong> ' + resultFeet + " ft " + resultInches + " in";
+
+  console.log("attachCalc() has completed");
 }
 
 //Attachment Calculator Button
