@@ -8,7 +8,6 @@ function toInches(ft) {
 // Converts Inches to Feet
 function toFeet(inches) {
   return inches / 12;
-<<<<<<< HEAD
 }
 
 
@@ -49,7 +48,6 @@ function getDecimal(n) {
 }
 
   document.getElementById("calcResults").innerHTML = '<strong>Result</strong> ' + resultFeet + " ft, " + resultInches + " in";
-=======
 }
 
 
