@@ -1,61 +1,42 @@
-/* --------------------------------------------------
-//POLE AUDIT: CHECK TO SEE IF EXISTING POLE ADEQUATE
-*/
-
-let poleAudit = document.getElementById('poleAudit') //Declares ID as var poleAudit
-
-poleAudit.addEventListener("click", evt => {
-
-    const poleID = prompt("Enter CEID#");
-    const poleSize = prompt("Enter Pole Size");
-    const poleClass = prompt("Enter Pole Class");
-    const condition = prompt("Please enter condition of pole (Good, Worn, or Damaged)")
-    const replace = "no";
-    
-    var newPole = {
-        id: poleID,
-        size: poleSize,
-        class: poleClass,
-        condition: condition,
-        replace: replace
-    }
-    
-    if (newPole.condition == "Damaged"){
-        newPole.replace = "Yes";
-    }
-    
-    alert("Pole 1 is a "+newPole.size+"ft class "+newPole.class+" pole.");
-    if (newPole.replace == "Yes") {
-        alert("Please replace this pole.");
-    }
-});
-
 let workSpace = document.getElementById('workspace');
 
-//Creates functionality for Feet to Inches Calculator
-document.getElementById('feetToInches').onclick = function () {
-    
-    //Generate field for text input
-    workSpace.innerHTML = '<input type="text" id="inputFeet" value="Please enter feet here." />';
-    
-    //Generate Submit Button
-    workSpace.innerHTML += '<input type="submit" value="Submit" id="feetSubmit">';
-
-    //Upon submit, read input
-    let feetSubmit = document.getElementById("feetSubmit");
-    feetSubmit.addEventListener("click", evt => {
-        let feet = document.getElementById("inputFeet").value;
-        console.log(feet);
-        //Run ftToInches
-        let result = ftToInches(feet);
-        //Display results
-        workSpace.innerHTML += "<p>"+feet+ " feet is equal to "+result+" inches.<p/>";
-        console.log(result);
-    });
-};
-
-//Function to Convert Feet to Inches
-function ftToInches(ft) {
-    let result = Math.floor(ft * 12);
-    return result;
+// Converts Feet to Inches
+function toInches(ft) {
+  return ft * 12;
 }
+
+// Converts Inches to Feet
+function toFeet(inches) {
+  return inches / 12;
+}
+
+
+function attachCalc() {
+
+  //Tells the browser to prevent its default behaviour and let us handle the form submitting event on the client side itself.
+  event.preventDefault(); 
+
+  //read afeet
+  let a_ft = parseInt(document.getElementById('a_ft').value);
+  //read ainches
+  let a_in = parseInt(document.getElementById('a_in').value);
+  
+  let a = a_ft + toFeet(a_in);
+
+  //read bfeet
+  let b_ft = parseInt(document.getElementById('b_ft').value);
+  //read binches
+  let b_in = parseInt(document.getElementById('b_in').value);
+
+  let b = b_ft + toFeet(b_in);
+  //convert ainches, b inches to feet
+  //calculate difference
+  console.log("attachCalc() has completed");
+  let result = (a-b);
+  resultFeet = toFeet(result);
+  resultInches = toInches(result);
+  document.getElementById("calcResults").innerHTML = '<strong>Result</strong> ' + resultFeet + "ft " + resultInches + " in";
+}
+
+//Attachment Calculator Button
+//On click, run attachCalc()
