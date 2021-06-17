@@ -10,6 +10,14 @@ function getDecimal(n) {
 	return (n - Math.floor(n));
 }
 
+function calcSetDepth(size) {
+  return (size*.10)+2;
+}
+
+function getAGL(size,setDepth = calcSetDepth(size)) {
+    return size-setDepth;
+}
+
 function attachCalc() {
   
   function calc(sel,a,b) {
