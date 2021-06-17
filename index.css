@@ -35,11 +35,16 @@ ul {
 
 #calcSpace {
   border: 1px solid #000;
-  padding: 5px;
+  padding: 15px;
   margin-top: 50px;
 }
 
 #calcResults {
   padding: 5px;
   text-align: center;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }

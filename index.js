@@ -66,3 +66,13 @@ function attachCalc() {
   resultInches = result%12;
   document.getElementById("calcResults").innerHTML = '<strong>Result =</strong> ' + resultFeet + " ft " + resultInches + " in";
 };
+
+
+//DARK MODE 
+function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+};
+
+
+
