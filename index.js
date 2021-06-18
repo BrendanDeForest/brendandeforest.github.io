@@ -87,6 +87,8 @@ function runGetAGL(){
   if (isNaN(poleSize)) {
     alert("ERROR: Missing Pole Size");
     return;
+  } else if (poleSize <= settingDepth) {
+    alert("ERROR: Setting depth can not be greater than pole size.");
   }
 
   let defaultSetDepth = false;
@@ -103,21 +105,10 @@ function runGetAGL(){
   //Displays Result
   document.getElementById("calcAGLResult").innerHTML = '<strong>Result =</strong> ' + result + " feet";
   if (defaultSetDepth == true){
-    document.getElementById("calcAGLNotes").innerHTML = 'Note: Standard setting depth was used';
+    document.getElementById("calcAGLNotes").innerHTML = 'Note: Standard setting depth of ' + calcSetDepth(poleSize) + ' feet was used';
   } else {
       document.getElementById("calcAGLNotes").innerHTML = '';
 };
 };
-
-
-
-
-
-
-
-
-
-
-
 
 
