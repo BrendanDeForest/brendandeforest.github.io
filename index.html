@@ -15,16 +15,10 @@
 
     <div id="container"> 
     <div id="workspace">
-        <div id="calcSpace">
-        <h4>Find the attachment separation between two cables</h4>
+        <div id="calcSpace" class="tools">
+          <h3>Attachment Calculator</h3>
+          <p>Input two attachment heights and choose an operation.</p>
         <form id="calc">
-          <label for="operation">Choose operation:</label>
-          <br>
-          <select id="operation">
-            <option value="Subtract">Subtract</option>
-            <option value="Add">Add</option>
-          </select>
-          <br><br>
           <div>
             <label>Top Attachment</label>
             <div>
@@ -43,14 +37,39 @@
             </div>
           </div>
           <div>
+          <select id="operation">
+            <option value="Subtract">Subtract</option>
+            <option value="Add">Add</option>
+          </select>
             <!-- Drop Down Menu add/subtract -->
             <Button type="reset">Reset</button>
             <Button type="submit" onevent="event.preventDefault()" onclick="attachCalc()">Submit</button>
           </div>
         </form>
-        <div id="calcResults"></div>
+        <div id="calcResults" class="results"></div>
+          <!-- Result will display here -->
       </div>
+    </div>
 
+    <div id="calcAGL" class="tools">
+      <h3>AGL Calculator</h3>
+      <form>
+        <label>Size of Pole</label>
+        <br>
+        <input type="number" id="pSize" placeholder = "Size">
+        <br>
+        <label>Setting Depth</label>
+        <br>
+        <input type="number" id="setDepth" placeholder = "Setting Depth"><small>Leave blank to use standard setting depth.</small>
+        <br>
+        <Button type="submit" onclick="runGetAGL()">Submit</button>
+      </form>
+      <div id="calcAGLResult" class="results">
+        <!-- Result will display here -->
+      </div>
+      <div id="calcAGLNotes">
+        <!-- Special notes to user will display here -->
+      </div>
     </div>
 
     <div class="links">

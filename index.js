@@ -75,4 +75,49 @@ function darkMode() {
 };
 
 
+function runGetAGL(){
+
+  //Prevents default behavior of submit button. 
+  event.preventDefault();  
+
+  //Gets Pole Size and Setting Depth inputed by user.
+  let poleSize = parseFloat(document.getElementById("pSize").value);
+  let settingDepth = parseFloat(document.getElementById("setDepth").value);
+
+  if (isNaN(poleSize)) {
+    alert("ERROR: Missing Pole Size");
+    return;
+  }
+
+  let defaultSetDepth = false;
+  if (isNaN(settingDepth)) {
+    settingDepth = calcSetDepth(poleSize);
+    defaultSetDepth = true;
+  };
+
+  //Runs getAGL() with variables and saves output to result
+  let result = getAGL(poleSize,settingDepth);
+  
+  console.log(result);
+
+  //Displays Result
+  document.getElementById("calcAGLResult").innerHTML = '<strong>Result =</strong> ' + result + " feet";
+  if (defaultSetDepth == true){
+    document.getElementById("calcAGLNotes").innerHTML = 'Note: Standard setting depth was used';
+  } else {
+      document.getElementById("calcAGLNotes").innerHTML = '';
+};
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
