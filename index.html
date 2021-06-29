@@ -15,7 +15,7 @@
 
     <div id="container"> 
     <div id="workspace">
-        <div id="calcSpace" class="tools">
+      <div id="calcSpace" class="tools">
           <h3>Attachment Calculator</h3>
           <p>Input two attachment heights and choose an operation.</p>
         <form id="calc">
@@ -71,6 +71,52 @@
         <!-- Special notes to user will display here -->
       </div>
     </div>
+    <div id="violations" class="tools">
+      <h3>Violation Checker</h3>
+      <p>Input two attachment heights and violations will be checked.</p>
+    <form id="calc">
+      <div>
+        <label>Top Attachment</label>
+        <div>
+          <input type="text" id="a_owner" placeholder="owner">
+          <br>
+          <input type="text" id="a_type" placeholder="type">
+          <br>
+          <input type="text" id="a_size" placeholder="size">
+          <br>
+          <input type="text" id="a_mid_height" placeholder="midspan height">
+          <br>
+          <input type="number" id="a_ft" placeholder="feet"><label> ft</label>
+          <br>
+          <input type="number" id="a_in" placeholder="inches"><label> in</label>
+        </div>
+      </div>
+      <br>
+      <div>
+        <label>Bottom Attachment</label>
+        <div>
+          <input type="text" id="b_owner" placeholder="owner">
+          <br>
+          <input type="text" id="b_type" placeholder="type">
+          <br>
+          <input type="text" id="b_size" placeholder="size">
+          <br>
+          <input type="text" id="b_mid_height" placeholder="midspan height">
+          <br>
+          <input type="number" id="b_ft" placeholder="feet"><label> ft</label>
+          <br>
+          <input type="number" id="b_in" placeholder="inches"><label> in</label>
+        </div>
+      </div>
+      <div>
+        <!-- Drop Down Menu add/subtract -->
+        <Button type="reset">Reset</button>
+        <Button type="submit" id="violationsButton" onevent="event.preventDefault()">Submit</button>
+      </div>
+    </form>
+    <div id="calcResults" class="results"></div>
+      <!-- Result will display here -->
+  </div>
   </div> <!-- /workspace -->
     <div class="links">
        <h3>Engineering Resources</h3>
